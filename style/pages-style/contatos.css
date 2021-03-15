@@ -1,0 +1,134 @@
+hr{
+    margin-bottom: 0;
+}
+a{
+    text-decoration: none;
+}
+.container-pages-cont{
+    margin: auto;
+    display: flex;
+    width: 50%;
+}
+.bg-cont{
+    background-image: url(../../img/pages/contatos/bg-cont.jpg);
+    background-size: 100% 100%;
+    padding-bottom: 30px;
+}
+.container-cont{
+	width: 100%;
+	float:left;
+    background-color: rgba(255,255,255,0.8);
+}
+.container-cont div{
+	width: 100%;
+	height: 90px;
+    display: flex;
+    border-bottom: 1px solid darkblue;
+}
+.bg-cont h1{
+    margin: 0;
+}
+.container-cont div img{
+	margin-left: 14%;
+	margin-top: 9px;
+	width: 70px;
+	height: 80%;
+}
+.container-cont div p{
+	margin-left: 10%;
+	margin-top: 0;
+	line-height: 3.5;
+	font-size: 25px;
+}
+.whats:hover{
+	background-image: -webkit-linear-gradient(top,darkgreen 0%,green 100%);
+    background-image: mozkit-linear-gradient(top,darkgreen 0%,green 100%);
+   	background-image: linear-gradient(top,darkgreen 0%,green 100%);
+	color: white;
+}
+.gmail:hover{
+	/*color: black;
+	background-color: #f2f2f2;*/
+	color: white;
+	background-color: #d32e2a;
+	background-image: -webkit-linear-gradient(top,#d32e2a  0%,#b22a27 100%);
+ 	background-image: -mozkit-linear-gradient(top,#d32e2a  0%,#b22a27 100%);
+  	background-image: linear-gradient(top,#d32e2a  0%,#b22a27 100%);
+	
+}
+#face:hover{
+	background-image: -webkit-linear-gradient(top,#8FA4CC  0%,#44619C 100%);
+ 	background-image: -mozkit-linear-gradient(top,#8FA4CC  0%,#44619C 100%);
+  	background-image: linear-gradient(top,#8FA4CC  0%,#44619C 100%);
+	color: white;
+}
+#insta:hover{
+	background-image: -webkit-linear-gradient(top,#E46224  0%,#C61C40 100%);
+  	background-image: -mozkit-linear-gradient(top,#E46224  0%,#C61C40 100%);
+    background-image: linear-gradient(top,#E46224  0%,#C61C40 100%);
+	color: white;
+}
+#skype-ctt:hover{
+	color: white;
+	background-color: #00aef3;
+	background-image: -webkit-linear-gradient(top,#00aef3  0%,#007cc1 100%);
+  	background-image: -mozkit-linear-gradient(top,#00aef3  0%,#007cc1 100%);
+    background-image: linear-gradient(top,#00aef3  0%,#007cc1 100%);
+}
+#linkedin:hover{
+	background-color: #0077b7;
+	background-image: -webkit-linear-gradient(top,#0077b7  0%,#005595 100%);
+  	background-image: -mozkit-linear-gradient(top,#0077b7  0%,#005595 100%);
+    background-image: linear-gradient(top,#0077b7  0%,#005595 100%);
+	color: white;
+}
+@media screen and (max-width: 1000px) and (min-width: 0px){
+.container-pages-cont{
+    width: 95%;
+}
+.container-cont div{
+	border-right: solid 0px #007;
+	border-bottom: solid 1px #007;
+	width: 100%;
+	height: 180px;
+}
+.container-pages {
+	margin-bottom: 90px;
+}
+.border-and-margin{
+	margin-top: 0px;
+	/*border-top: solid 1px #007;*/
+}
+.container-cont div img {
+    width: 140px;
+}
+.container-cont div p {
+    font-size: 40px;
+	line-height: 4.3;
+}
+}
+@media screen and (max-width: 800px) and (min-width: 0px){
+.container-cont div{
+	height: auto;
+    flex-direction: column;
+    align-items: center;
+}
+.container-cont div img, .container-cont div p {
+    margin: 0;
+    line-height: 1.5;
+}
+}
+@media screen and (max-width: 500px) and (min-width: 0px){
+.container-cont div p {
+    font-size: 30px;
+    line-height: 2;
+}
+}
+@media screen and (max-width: 300px) and (min-width: 0px){
+.container-cont div img {
+    width: 80px;
+}
+.container-cont div p {
+    font-size: 10px;
+}
+}

@@ -1,0 +1,111 @@
+hr{
+    margin-bottom: 0;
+}
+.bg-exp{
+    background-image: url(../../img/pages/exp/bg-exp.jpg);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    float: left;
+    width: 100%;
+/*    padding-top: 50px;*/
+/*    filter: grayscale(0.8);*/
+}
+.container-job{
+	width: 300px;
+	height: 350px;
+	box-shadow: 5px 5px 5px 4px rgba(0, 0, 0, 0.5);
+	margin-bottom: 20px;
+    margin-left: 30px;
+    background-color: rgba(255,255,255,0.9);
+    border-radius: 6px;
+}
+.lado{
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.img-job{
+	float: left;
+	width: 100%;
+	height: 40%;
+}
+.img-job img{
+	float: left;
+	width: 100%;
+	height:100%;
+}
+.txt-job{
+	float: left;
+	width: 100%;
+	height: 60%;
+}
+.title{
+    color:white;
+    background-color: rgba(0,0,0,0.5);
+    margin-top: 0;
+}
+.txt-job h1{
+	margin:0;
+	font-size: 25px;
+}
+.txt-job h2{
+	margin: 0;
+	margin-left: 2%;
+	font-size: 20px;
+}
+.txt-job p{
+	margin: 0;
+	margin-left: 2%;
+    margin-right: 2%;
+	font-size: 15px;
+}
+@media screen and (max-width: 1000px) and (min-width: 0px){
+.container-job{
+    width: 90%;
+	height: 1200px;
+    margin-top: 30px;
+}
+    
+.img-job{
+	width: 100%;
+	height:38%;
+}
+.txt-job{
+	width:100%;
+	height:50%;
+}
+.txt-job h1{
+    margin-top:10px;
+	font-size: 60px;
+}
+.txt-job h2{
+	font-size: 50px;
+}
+.txt-job p{
+	font-size: 45px;
+}
+}
+@media screen and (max-width: 800px) and (min-width: 0px){
+.container-job{
+    width: 100%;
+    margin-left: 0;
+	height: auto;
+}
+.img-job, .txt-job{
+	height: auto;
+}   
+}
+@media screen and (max-width: 400px) and (min-width: 0px){
+.font-title-mobile {
+    font-size: 25px;
+}
+.txt-job h1{
+	font-size: 40px;
+}
+.txt-job h2{
+	font-size: 25px;
+}
+.txt-job p{
+	font-size: 18px;
+}
+}

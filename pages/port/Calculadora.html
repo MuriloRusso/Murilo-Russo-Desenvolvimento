@@ -1,0 +1,1191 @@
+﻿<!DOCTYPE html>
+
+	<html>
+
+		<head> <title>Calculadora</title> 
+		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bangers&display=swap" rel="stylesheet">
+        <link rel="icon" type="imagem/png" href="ico.ico" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+            
+
+		</head>
+		<style>
+			body{
+				display: flex;
+               	justify-content: center;
+                background-color: #666;
+			}
+	       .arredondado{
+               	border-radius: 6px;
+	      	}
+            header{
+                width:100%;
+               	/*height:130px;*/
+                height: 50px;
+               	background-color: #004AAD;
+                border-top-left-radius: 6px;
+                border-top-right-radius: 6px;
+           	}
+            header img{
+           	    /*width: 40%;*/
+                width: 35%;
+                height: 100%;
+                border-top-left-radius: 6px;
+                float: left;
+            }
+            header h1{
+                color: white;
+                float: left;
+                margin: 0.3% 5%;
+                position: absolute;
+            }
+			.container{
+				width:300px;
+               	box-shadow: 5px 5px 5px 4px rgba(0, 0, 0, 0.5);
+				padding-bottom: 10px;
+                background-color: #b9cac4;
+			}	
+			.resultado{
+				margin-top: 10px;
+				margin-right: 5%;
+				width: 90%;
+				height: 60px;
+				float: right;
+				border: 1px solid black;
+                border-radius: 2px;
+                background-image: -webkit-linear-gradient(top,#daecf6 0%,white 100%);   
+                box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+			}
+			input{
+				border: 0;
+                float: right;
+                text-align: right;
+                background-color: transparent;
+			}
+            input:focus{
+                box-shadow: 0 0 0 0;
+                outline: 0;
+            }
+            #op{
+                width:5%;
+                height:30%;
+            }
+            #n1{
+                width:92%;
+                height:30%;
+            }
+            #n2{
+                width: 98%;
+                height: 63%;
+                font-size: 25px;
+            }
+			.btn{
+				border: 1px solid black;
+				margin-left: 14px;
+				margin-top:10px;
+				float: left;
+				width: 40px;
+				height: 50px;
+				text-align: center;
+				font-size: 30px;
+				line-height: 1.7;
+                border-radius: 2px;
+                /*background-color: #daecf6;*/
+				background-image: -webkit-linear-gradient(top,#daecf6 0%,white 100%);
+				box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+			}
+            .btn:hover{
+                background-image: -webkit-linear-gradient(top,#a9cac3 0%,#DDD 100%);
+                /*background-color: #95a7a1;*/
+            }
+            .btn2:hover{
+                background-image: -webkit-linear-gradient(top,#a9cac3 0%,#DDD 100%);
+                /*background-color: #95a7a1;*/
+            }
+            .btn3:hover{
+               background-image: -webkit-linear-gradient(top,#a9cac3 0%,#DDD 100%);
+                /*background-color: #95a7a1;*/
+            }
+			.btn2{
+				border: 1px solid black;
+				margin-left: 14px;
+				margin-top:10px;
+				float: left;
+				width: 40px;
+				height: 112px;
+				text-align: center;
+				font-size: 30px;
+				line-height: 3.5;
+                border-radius: 2px;
+                /*background-color: #daecf6;*/
+				background-image: -webkit-linear-gradient(top,#daecf6 0%,white 100%);
+                box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+			}
+			.btn3{
+				border: 1px solid black;
+				margin-left: 14px;
+				margin-top:10px;
+				float: left;
+				width:96px;
+				height: 50px;
+				text-align: center;
+				font-size: 30px;
+				line-height: 1.7;
+                border-radius: 2px;
+                /*background-color: #daecf6;*/
+				background-image: -webkit-linear-gradient(top,#daecf6 0%,white 100%);
+                box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+			}
+			.container1{
+				width: 75%;
+				float: left;
+			}
+			.container2{
+				width: 20%;
+				float: left;
+			}
+@media screen and (max-width: 1000px) and (min-width: 0px){
+            .container{
+                width:98%;
+            }  
+            header{
+                height: 150px;    
+            }
+            header h1{
+                margin-left: 20%;
+                margin-top: 2%;
+                font-size: 70px;
+            }
+            .resultado{
+                margin-top:35px;
+                height: 150px; 
+                margin-right: 7%;
+                width: 88%;
+            }
+            #n1 {
+                width: 85%;
+                font-size: 45px;
+            }
+            #op {
+                font-size: 50px;
+            }
+            #n2 {
+                font-size: 65px;
+            }
+            .btn {
+                margin-left: 43px;
+                margin-top: 35px;
+                float: left;
+                width: 130px;
+                height: 178px;
+                font-size: 90px;
+                line-height: 2;
+            }
+            .btn2{
+                margin-left: 36px;
+                margin-top: 35px;    
+                width: 130px;
+                height: 395px;
+                font-size: 120px;
+                line-height: 3.2;
+            }
+            .btn3{
+                margin-left: 43px;
+                margin-top: 35px;   
+                width: 305px;
+                height: 178px;
+                font-size: 120px;
+                line-height: 1.5;
+            }
+}
+		</style>
+
+		<body>
+			<div class="container arredondado">
+                <header>
+                    <!--<img src="https://imagizer.imageshack.com/v2/438x387q90/924/uYkr2p.png">-->
+                    <img src="img.png">
+                    <h1>Calculadora</h1>
+                </header>
+				<div id="resultado" class="resultado">
+                    <input readonly=“true” id="op">
+					<input readonly=“true” id="n1">
+					<input readonly=“true” id="n2" value="0">
+				</div>
+				<div class="btn3" onclick='raiz()'> Raiz </div>
+				<div class="btn" onclick='mudar()'> +/- </div>
+				<div class="btn3" id="excluir"> Back </div>
+				<div class="btn" onclick='d7()'> 7 </div>
+				<div class="btn" onclick='d8()'> 8 </div>
+				<div class="btn" onclick='d9()'> 9 </div>
+				<div class="btn" onclick='div()'> / </div>
+				<div class="btn" id="C" onclick='C()'> C </div>
+				<div class="btn" onclick='d4()'> 4 </div>
+				<div class="btn" onclick='d5()'> 5 </div>
+				<div class="btn" onclick='d6()'> 6 </div>
+				<div class="btn"  onclick='mult()'> * </div>
+				<div class="btn" id="%" onclick='porcent()'> % </div>
+				<div class="container1">
+				<div class="btn"  onclick='d1()'> 1 </div>
+				<div class="btn" onclick='d2()'> 2 </div>
+				<div class="btn" onclick='d3()'> 3 </div>
+				<div class="btn"  onclick='sub()'> - </div>
+				<div class="btn3" onclick='d0()'> 0 </div>
+				<div class="btn" onclick='virg()'> , </div>
+				<div class="btn" onclick='somar()'> + </div>
+				</div>
+				<div class="container2">
+				<div class="btn2" id="=" onclick='result()' > = </div>
+				</div>  
+			</div>
+		</body>
+
+<script>
+    var z = 0;
+    var d = 0;
+    var v = 0;
+
+
+
+
+
+$(document).ready(function(){
+  $(document).keypress(function(e){
+	if(e.wich == 48 || e.keyCode == 48){
+		var n2 = document.getElementById("n2").value;
+        if(n2 == "0" || n2 == "" || d=="1"){
+            document.getElementById("n2").value = "0";
+            d = "0";
+        }
+        else{
+		    document.getElementById("n2").value = n2+"0";
+        }
+	}
+  })
+})
+
+
+
+$(document).ready(function(){
+  $(document).keypress(function(e){
+	if(e.wich == 49 || e.keyCode == 49){
+	var n2 = document.getElementById("n2").value;
+        if(n2 == "0" || n2 == "" || d=="1"){
+            document.getElementById("n2").value = "1";
+            d = "0";
+        }
+        else{
+		    document.getElementById("n2").value = n2+"1";
+        }
+	}
+  })
+})
+
+
+$(document).ready(function(){
+  $(document).keypress(function(e){
+	if(e.wich == 50 || e.keyCode == 50){
+	var n2 = document.getElementById("n2").value;
+        if(n2 == "0" || n2 == "" || d=="1"){
+            document.getElementById("n2").value = "2";
+            d = "0";
+        }
+        else{
+		    document.getElementById("n2").value = n2+"2";
+        }
+	}
+  })
+})
+$(document).ready(function(){
+  $(document).keypress(function(e){
+	if(e.wich == 51 || e.keyCode == 51){
+	var n2 = document.getElementById("n2").value;
+        if(n2 == "0" || n2 == "" || d=="1"){
+            document.getElementById("n2").value = "3";
+            d = "0";
+        }
+        else{
+		    document.getElementById("n2").value = n2+"3";
+        }
+	}
+  })
+})
+$(document).ready(function(){
+  $(document).keypress(function(e){
+	if(e.wich == 52 || e.keyCode == 52){
+	var n2 = document.getElementById("n2").value;
+        if(n2 == "0" || n2 == "" || d=="1"){
+            document.getElementById("n2").value = "4";
+            d = "0";
+        }
+        else{
+		    document.getElementById("n2").value = n2+"4";
+        }
+	}
+  })
+})
+$(document).ready(function(){
+  $(document).keypress(function(e){
+	if(e.wich == 53 || e.keyCode == 53){
+	var n2 = document.getElementById("n2").value;
+        if(n2 == "0" || n2 == "" || d=="1"){
+            document.getElementById("n2").value = "5";
+            d = "0";
+        }
+        else{
+		    document.getElementById("n2").value = n2+"5";
+        }
+	}
+  })
+})
+$(document).ready(function(){
+  $(document).keypress(function(e){
+	if(e.wich == 54 || e.keyCode == 54){
+	var n2 = document.getElementById("n2").value;
+        if(n2 == "0" || n2 == "" || d=="1"){
+            document.getElementById("n2").value = "6";
+            d = "0";
+        }
+        else{
+		    document.getElementById("n2").value = n2+"6";
+        }
+	}
+  })
+})
+$(document).ready(function(){
+  $(document).keypress(function(e){
+	if(e.wich == 55 || e.keyCode == 55){
+	var n2 = document.getElementById("n2").value;
+        if(n2 == "0" || n2 == "" || d=="1"){
+            document.getElementById("n2").value = "7";
+            d = "0";
+        }
+        else{
+		    document.getElementById("n2").value = n2+"7";
+        }
+	}
+  })
+})
+$(document).ready(function(){
+  $(document).keypress(function(e){
+	if(e.wich == 56 || e.keyCode == 56){
+	var n2 = document.getElementById("n2").value;
+        if(n2 == "0" || n2 == "" || d=="1"){
+            document.getElementById("n2").value = "8";
+            d = "0";
+        }
+        else{
+		    document.getElementById("n2").value = n2+"8";
+        }
+	}
+  })
+})
+$(document).ready(function(){
+  $(document).keypress(function(e){
+	if(e.wich == 57 || e.keyCode == 57){
+	var n2 = document.getElementById("n2").value;
+        if(n2 == "0" || n2 == "" || d=="1"){
+            document.getElementById("n2").value = "9";
+            d = "0";
+        }
+        else{
+		    document.getElementById("n2").value = n2+"9";
+        }
+	}
+  })
+})
+	var y = 0;
+	function d1() {
+		var n2 = document.getElementById("n2").value;
+        if(n2 == "0" || n2 == "" || d=="1"){
+            document.getElementById("n2").value = "1";
+            d = "0";
+        }
+        else{
+		    document.getElementById("n2").value = n2+"1";
+        }
+	}
+	function d2() {
+		var n2 = document.getElementById("n2").value;
+        if(n2 == "0" || n2 == "" || d=="1"){
+            document.getElementById("n2").value = "2";
+            d = "0";
+        }
+        else{
+		    document.getElementById("n2").value = n2+"2";
+        }
+	}
+	function d3() {
+		var n2 = document.getElementById("n2").value;
+        if(n2 == "0" || n2 == "" || d=="1"){
+            document.getElementById("n2").value = "3";
+            d = "0";
+        }
+        else{
+		    document.getElementById("n2").value = n2+"3";
+        }
+	}
+	function d4() {
+		var n2 = document.getElementById("n2").value;
+        if(n2 == "0" || n2 == "" || d=="1"){
+            document.getElementById("n2").value = "4";
+            d = "0";
+        }
+        else{
+		    document.getElementById("n2").value = n2+"4";
+        }
+	}
+	function d5() {
+		var n2 = document.getElementById("n2").value;
+        if(n2 == "0" || n2 == "" || d=="1"){
+            document.getElementById("n2").value = "5";
+            d = "0";
+        }
+        else{
+		    document.getElementById("n2").value = n2+"5";
+        }
+	}
+	function d6() {
+		var n2 = document.getElementById("n2").value;
+        if(n2 == "0" || n2 == "" || d=="1"){
+            document.getElementById("n2").value = "6";
+            d = "0";
+        }
+        else{
+		    document.getElementById("n2").value = n2+"6";
+        }
+	}
+    function d7() {
+		var n2 = document.getElementById("n2").value;
+        if(n2 == "0" || n2 == "" || d=="1"){
+            document.getElementById("n2").value = "7";
+            d = "0";
+        }
+        else{
+		    document.getElementById("n2").value = n2+"7";
+        }
+	}
+	function d8() {
+		var n2 = document.getElementById("n2").value;
+        if(n2 == "0" || n2 == "" || d=="1"){
+            document.getElementById("n2").value = "8";
+            d = "0";
+        }
+        else{
+		    document.getElementById("n2").value = n2+"8";
+        }
+	}
+	function d9() {
+		var n2 = document.getElementById("n2").value;
+        if(n2 == "0" || n2 == "" || d=="1"){
+            document.getElementById("n2").value = "9";
+            d = "0";
+        }
+        else{
+		    document.getElementById("n2").value = n2+"9";
+        }
+	}
+	function d0() {
+		var n2 = document.getElementById("n2").value;
+        if(n2 == "0" || n2 == "" || d=="1"){
+            document.getElementById("n2").value = "0";
+            d = "0";
+        }
+        else{
+		    document.getElementById("n2").value = n2+"0";
+        }
+	}
+$(document).ready(function(){
+  $(document).keypress(function(e){
+    if(e.wich == 44 || e.keyCode == 44 || e.wich == 46 || e.keyCode == 46){
+	var n2 = document.getElementById("n2").value;
+    if(d=="1"){
+        document.getElementById("n2").value = "0.";
+        v="1";
+        d="0";
+    }
+    else{
+        if(v=="0"){
+        if(n2=="-0" || n2=="-"){
+           	document.getElementById("n2").value = "-0.";
+            v="1";
+            d="0";
+        }
+        else{
+            document.getElementById("n2").value = n2+".";
+            v="1";
+            d="0";
+       	}
+    }
+    else{}
+    }
+	}
+  })
+})
+function virg(){
+	var n2 = document.getElementById("n2").value;
+    if(d=="1"){
+        document.getElementById("n2").value = "0.";
+        v="1";
+        d="0";
+    }
+    else{
+        if(v=="0"){
+        if(n2=="-0" || n2=="-"){
+           	document.getElementById("n2").value = "-0.";
+            v="1";
+            d="0";
+        }
+        else{
+            document.getElementById("n2").value = n2+".";
+            v="1";
+            d="0";
+       	}
+    }
+    else{}
+    }
+}
+$(document).ready(function(){
+  $(document).keypress(function(e){
+	if(e.wich == 43 || e.keyCode == 43){
+        var n1 = document.getElementById("n1").value;
+		var n2 = document.getElementById("n2").value;
+        var op = document.getElementById("op").value;
+        if(n2=="0"){
+             n1 = parseFloat(document.getElementById("n1").value);
+             op = document.getElementById("op").value;
+             n2 = parseFloat(document.getElementById("n2").value);
+                    if(op==""){
+                        document.getElementById("n1").value = "0";
+                        r = 0;
+                    }
+                    else if(op=="+"){
+                        r = n1 + n2;
+                    }
+                    else if(op=="-"){
+                        r = n1 - n2;
+                    }
+                    else if(op=="/"){
+                        r = n1 / n2;
+                    }
+                    else if(op=="*"){
+                        r = n1 * n2;
+                    }  
+                    else{}
+        }
+        else{
+            if(n1==""){
+            r = n2; 
+            }
+            else{
+                 n1 = parseFloat(document.getElementById("n1").value);
+		         n2 = parseFloat(document.getElementById("n2").value);
+                if(op=="+"){
+                     r = n1+n2;
+                }
+                else if(op=="-"){
+                     r = n1-n2;
+                }
+                else if(op=="/"){
+                     r = n1/n2;
+                }
+                 else if(op=="*"){
+                     r = n1*n2;
+                }
+                else{
+                }
+            } 
+        }
+        document.getElementById("n1").value = r;
+        document.getElementById("n2").value = "0";
+        document.getElementById("op").value = "+";
+        v="0";
+	z=0;
+	}
+  })
+})
+     function somar() {
+        var n1 = document.getElementById("n1").value;
+		var n2 = document.getElementById("n2").value;
+        var op = document.getElementById("op").value;
+        if(n2=="0"){
+             n1 = parseFloat(document.getElementById("n1").value);
+             op = document.getElementById("op").value;
+             n2 = parseFloat(document.getElementById("n2").value);
+                    if(op==""){
+                        document.getElementById("n1").value = "0";
+                        r = 0;
+                    }
+                    else if(op=="+"){
+                        r = n1 + n2;
+                    }
+                    else if(op=="-"){
+                        r = n1 - n2;
+                    }
+                    else if(op=="/"){
+                        r = n1 / n2;
+                    }
+                    else if(op=="*"){
+                        r = n1 * n2;
+                    }  
+                    else{}
+        }
+        else{
+            if(n1==""){
+            r = n2; 
+            }
+            else{
+                 n1 = parseFloat(document.getElementById("n1").value);
+		         n2 = parseFloat(document.getElementById("n2").value);
+                if(op=="+"){
+                     r = n1+n2;
+                }
+                else if(op=="-"){
+                     r = n1-n2;
+                }
+                else if(op=="/"){
+                     r = n1/n2;
+                }
+                 else if(op=="*"){
+                     r = n1*n2;
+                }
+                else{
+                }
+            } 
+        }
+        document.getElementById("n1").value = r;
+        document.getElementById("n2").value = "0";
+        document.getElementById("op").value = "+";
+        v="0";
+	z=0;
+    }
+$(document).ready(function(){
+  $(document).keypress(function(e){
+	if(e.wich == 45 || e.keyCode == 45){
+        var n1 = document.getElementById("n1").value;
+		var n2 = document.getElementById("n2").value;
+        var op = document.getElementById("op").value;
+        if(n1==""){
+            if(n2=="0"){
+                n2="-";
+            }
+            else{
+                n1 = n2;
+                op = "-";
+                n2 = "0";
+            }
+        }
+        else{
+            n1 = parseFloat(document.getElementById("n1").value);
+            n2 = parseFloat(document.getElementById("n2").value);
+            d="0";
+            if(op=="*"){
+                if(!n2=="0"){
+                    n1 = n1*n2;
+                    n2="-";
+                }
+                else{
+                    n2="-";
+                }
+            }
+            else if(op=="/"){
+                if(!n2=="0"){
+                    n1 = n1/n2;
+                    n2="-";
+                }
+                else{
+                    n2="-";
+                }
+            }
+            else if(op=="+"){
+                if(!n2=="0"){
+                    n1 = n1+n2;
+                    op = "-"
+                    n2 = "0";
+                   }
+                else{
+                    op = "-";
+                }
+            }
+            else if(op=="-"){
+                n1=n1-n2;
+                op="-";
+                n2="0";
+            }
+		else{}
+        }
+        document.getElementById("n1").value = n1;
+        document.getElementById("n2").value = n2;
+        document.getElementById("op").value = op;
+        v="0";
+	z=0;
+	}
+  })
+})
+	function sub() {
+        var n1 = document.getElementById("n1").value;
+		var n2 = document.getElementById("n2").value;
+        var op = document.getElementById("op").value;
+        if(n1==""){
+            if(n2=="0"){
+                n2="-";
+            }
+            else{
+                n1 = n2;
+                op = "-";
+                n2 = "0";
+            }
+        }
+        else{
+            n1 = parseFloat(document.getElementById("n1").value);
+            n2 = parseFloat(document.getElementById("n2").value);
+            d="0";
+            if(op=="*"){
+                if(!n2=="0"){
+                    n1 = n1*n2;
+                    n2="-";
+                }
+                else{
+                    n2="-";
+                }
+            }
+            else if(op=="/"){
+                if(!n2=="0"){
+                    n1 = n1/n2;
+                    n2="-";
+                }
+                else{
+                    n2="-";
+                }
+            }
+            else if(op=="+"){
+                if(!n2=="0"){
+                    n1 = n1+n2;
+                    op = "-"
+                    n2 = "0";
+                   }
+                else{
+                    op = "-";
+                }
+            }
+            else if(op=="-"){
+                n1=n1-n2;
+                op="-";
+                n2="0";
+            }
+		else{}
+        }
+        document.getElementById("n1").value = n1;
+        document.getElementById("n2").value = n2;
+        document.getElementById("op").value = op;
+        v="0";
+	z=0;
+}
+
+$(document).ready(function(){
+  $(document).keypress(function(e){
+	if(e.wich == 47 || e.keyCode == 47){
+        var n1 = document.getElementById("n1").value;
+		var n2 = document.getElementById("n2").value;
+        var op = document.getElementById("op").value;
+        if(n2=="0"){
+             n1 = parseFloat(document.getElementById("n1").value);
+             op = document.getElementById("op").value;
+             n2 = parseFloat(document.getElementById("n2").value);
+                    if(op==""){
+                        document.getElementById("n1").value = "0";
+                        r = 0;
+                    }
+                    else if(op=="+"){
+                        r = n1 + n2;
+                    }
+                    else if(op=="-"){
+                        r = n1 - n2;
+                    }
+                    else if(op=="/"){
+                        r = n1 / n2;
+                    }
+                    else if(op=="*"){
+                        r = n1 * n2;
+                    }  
+                    else{}
+        }
+        else{
+            if(n1==""){
+            r = n2; 
+            }
+            else{
+                 n1 = parseFloat(document.getElementById("n1").value);
+		         n2 = parseFloat(document.getElementById("n2").value);
+                if(op=="+"){
+                     r = n1+n2;
+                }
+                else if(op=="-"){
+                     r = n1-n2;
+                }
+                else if(op=="/"){
+                     r = n1/n2;
+                }
+                 else if(op=="*"){
+                     r = n1*n2;
+                }
+                else{
+                }
+            } 
+        }
+        document.getElementById("n1").value = r;
+        document.getElementById("n2").value = "0";
+        document.getElementById("op").value = "/";
+        v="0";
+	z=0;
+	}
+  })
+})
+     function div() {
+        var n1 = document.getElementById("n1").value;
+		var n2 = document.getElementById("n2").value;
+        var op = document.getElementById("op").value;
+        if(n2=="0"){
+             //n1 = parseFloat(document.getElementById("n1").value);
+             op = document.getElementById("op").value;
+             //n2 = parseFloat(document.getElementById("n2").value);
+                    if(op==""){
+                        document.getElementById("n1").value = "0";
+                        r = 0;
+                    }
+                    else if(op=="+"){
+                        r = n1 + n2;
+                    }
+                    else if(op=="-"){
+                        r = n1 - n2;
+                    }
+                    else if(op=="/"){
+                        r = n1 / n2;
+                    }
+                    else if(op=="*"){
+                        r = n1 * n2;
+                    }  
+                    else{}
+        }
+        else{
+            if(n1==""){
+            r = n2; 
+            }
+            else{
+                 n1 = parseFloat(document.getElementById("n1").value);
+		         n2 = parseFloat(document.getElementById("n2").value);
+                if(op=="+"){
+                     r = n1+n2;
+                }
+                else if(op=="-"){
+                     r = n1-n2;
+                }
+                else if(op=="/"){
+                     r = n1/n2;
+                }
+                 else if(op=="*"){
+                     r = n1*n2;
+                }
+                else{
+                }
+            } 
+        }
+        document.getElementById("n1").value = r;
+        document.getElementById("n2").value = "0";
+        document.getElementById("op").value = "/";
+        v="0";
+	z=0;
+    }
+$(document).ready(function(){
+  $(document).keypress(function(e){
+	if(e.wich == 42 || e.keyCode == 42){
+        var n1 = document.getElementById("n1").value;
+		var n2 = document.getElementById("n2").value;
+        var op = document.getElementById("op").value;
+        if(n2=="0"){
+             n1 = parseFloat(document.getElementById("n1").value);
+             op = document.getElementById("op").value;
+             n2 = parseFloat(document.getElementById("n2").value);
+                    if(op==""){
+                        document.getElementById("n1").value = "0";
+                        r = 0;
+                    }
+                    else if(op=="+"){
+                        r = n1 + n2;
+                    }
+                    else if(op=="-"){
+                        r = n1 - n2;
+                    }
+                    else if(op=="/"){
+                        r = n1 / n2;
+                    }
+                    else if(op=="*"){
+                        r = n1 * n2;
+                    }  
+                    else{}
+        }
+        else{
+            if(n1==""){
+            r = n2; 
+            }
+            else{
+                 n1 = parseFloat(document.getElementById("n1").value);
+		         n2 = parseFloat(document.getElementById("n2").value);
+                if(op=="+"){
+                     r = n1+n2;
+                }
+                else if(op=="-"){
+                     r = n1-n2;
+                }
+                else if(op=="/"){
+                     r = n1/n2;
+                }
+                 else if(op=="*"){
+                     r = n1*n2;
+                }
+                else{
+                }
+            } 
+        }
+        document.getElementById("n1").value = r;
+        document.getElementById("n2").value = "0";
+        document.getElementById("op").value = "*";
+        v="0";
+	z=0;
+	}
+  })
+})
+     function mult() {
+        var n1 = document.getElementById("n1").value;
+		var n2 = document.getElementById("n2").value;
+        var op = document.getElementById("op").value;
+        if(n2=="0"){
+             n1 = parseFloat(document.getElementById("n1").value);
+             op = document.getElementById("op").value;
+             n2 = parseFloat(document.getElementById("n2").value);
+                    if(op==""){
+                        document.getElementById("n1").value = "0";
+                        r = 0;
+                    }
+                    else if(op=="+"){
+                        r = n1 + n2;
+                    }
+                    else if(op=="-"){
+                        r = n1 - n2;
+                    }
+                    else if(op=="/"){
+                        r = n1 / n2;
+                    }
+                    else if(op=="*"){
+                        r = n1 * n2;
+                    }  
+                    else{}
+        }
+        else{
+            if(n1==""){
+            r = n2; 
+            }
+            else{
+                 n1 = parseFloat(document.getElementById("n1").value);
+		         n2 = parseFloat(document.getElementById("n2").value);
+                if(op=="+"){
+                     r = n1+n2;
+                }
+                else if(op=="-"){
+                     r = n1-n2;
+                }
+                else if(op=="/"){
+                     r = n1/n2;
+                }
+                 else if(op=="*"){
+                     r = n1*n2;
+                }
+                else{
+                }
+            } 
+        }
+        document.getElementById("n1").value = r;
+        document.getElementById("n2").value = "0";
+        document.getElementById("op").value = "*";
+        v="0";
+	z=0;
+    }
+     function raiz() {
+        n2 = parseFloat(document.getElementById("n2").value);
+        document.getElementById("n2").value = Math.sqrt(n2); 
+    }
+$(document).ready(function(){
+  $(document).keypress(function(e){
+	if(e.wich ==  114 || e.keyCode == 114){
+		n2 = parseFloat(document.getElementById("n2").value);
+        	document.getElementById("n2").value = Math.sqrt(n2); 
+	}	
+  })
+})
+$(document).ready(function(){
+  $(document).keypress(function(e){
+	if(e.wich == 37 || e.keyCode == 37){
+        var n1 = document.getElementById("n1").value;
+        var n2 = parseFloat(document.getElementById("n2").value);
+        var op = document.getElementById("op").value;
+        if (z=="0"){
+             if(n1==""){
+             }
+             else{
+		 n1 = parseFloat(document.getElementById("n1").value);
+                 var x = (n1/100)*n2;
+                 document.getElementById("n2").value = x;
+                 z=1;
+             }
+        }
+        else{}
+	}
+  })
+})
+     function porcent() {
+        var n1 = document.getElementById("n1").value;
+        var n2 = parseFloat(document.getElementById("n2").value);
+        var op = document.getElementById("op").value;
+        if (z=="0"){
+             if(n1==""){
+             }
+             else{
+		 n1 = parseFloat(document.getElementById("n1").value);
+                 var x = (n1/100)*n2;
+                 document.getElementById("n2").value = x;
+                 z=1;
+             }
+        }
+        else{}
+    }
+     function mudar() {
+        var n2 = parseFloat(document.getElementById("n2").value);
+       	n2=n2*(-1);
+	document.getElementById("n2").value = n2;
+    }
+$(document).ready(function(){
+  $(document).keypress(function(e){
+	if(e.wich == 13 || e.keyCode == 13 || e.wich == 61 || e.keyCode == 61){
+	var n1 = parseFloat(document.getElementById("n1").value);
+	var n2 = parseFloat(document.getElementById("n2").value);
+	var op = document.getElementById("op").value;
+	if(op == "+"){
+        	if(n1 == ""){
+            		n1="0";
+        	}
+        	else{}
+	n2=n1+n2;
+	}
+	else if(op == "-"){
+        	if(n1 == ""){
+            		n1="0";           
+        	}
+        	else{}
+	n2=n1-n2;
+	}
+	else if(op == "/"){
+        	if(n1 == ""){
+            	n1="0";           
+        	}
+        	else{}
+	n2=n1/n2;
+	}
+	else if(op == "*"){
+        	if(n1 == ""){
+            		n1="0";           
+        	}
+        else{}
+		n2=n1*n2;
+		}
+    document.getElementById("n1").value = "";
+    document.getElementById("op").value = "";
+	document.getElementById("n2").value = n2;
+	
+    v="0";
+    d="1";
+    z=0;
+	}
+  })
+})
+function result() {
+	var n1 = parseFloat(document.getElementById("n1").value);
+	var n2 = parseFloat(document.getElementById("n2").value);
+	var op = document.getElementById("op").value;
+	if(op == "+"){
+        	if(n1 == ""){
+            		n1="0";
+        	}
+        	else{}
+	n2=n1+n2;
+	}
+	else if(op == "-"){
+        	if(n1 == ""){
+            		n1="0";           
+        	}
+        	else{}
+	n2=n1-n2;
+	}
+	else if(op == "/"){
+        	if(n1 == ""){
+            	n1="0";           
+        	}
+        	else{}
+	n2=n1/n2;
+	}
+	else if(op == "*"){
+        	if(n1 == ""){
+            		n1="0";           
+        	}
+        else{}
+		n2=n1*n2;
+		}
+    document.getElementById("n1").value = "";
+    document.getElementById("op").value = "";
+	document.getElementById("n2").value = n2;
+	
+    v="0";
+    d="1";
+    z=0;
+}
+$(document).ready(function(){
+  $(document).keypress(function(e){
+	if(e.wich == 116 || e.keyCode == 116){
+		var input = $('#n2');
+  		input.val(input.val().slice(0, -1));
+	}
+  })
+})
+
+$('#excluir').on('click', function (){
+  var input = $('#n2'); 
+  input.val(input.val().slice(0, -1));
+});
+
+$(document).ready(function(){
+  $(document).keypress(function(e){
+	if(e.wich == 8 || e.keyCode == 8){
+		document.getElementById("n1").value = "";
+  		document.getElementById("n2").value = "0";
+   		document.getElementById("op").value = "";
+        v="0";
+	d="0";
+	}
+  })
+})
+    function C() {
+        document.getElementById("n1").value = "";
+        document.getElementById("n2").value = "0";
+        document.getElementById("op").value = "";
+        v="0";
+	d="0";
+	}
+
+
+
+</script>
+
+
+	</html>		
