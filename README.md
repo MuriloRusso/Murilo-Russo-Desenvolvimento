@@ -1,0 +1,1 @@
+Um site pessoal, criado para divulgar meu trabalho, minhas habilidades, e meu portfólio.
