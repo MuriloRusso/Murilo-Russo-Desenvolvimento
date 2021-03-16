@@ -56,6 +56,10 @@ a{
   	background-image: linear-gradient(top,#d32e2a  0%,#b22a27 100%);
 	
 }
+#github:hover{
+	background-color: black;
+	color: white;
+}
 #face:hover{
 	background-image: -webkit-linear-gradient(top,#8FA4CC  0%,#44619C 100%);
  	background-image: -mozkit-linear-gradient(top,#8FA4CC  0%,#44619C 100%);
