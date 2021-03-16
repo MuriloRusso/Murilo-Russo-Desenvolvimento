@@ -551,59 +551,7 @@ function virg(){
 $(document).ready(function(){
   $(document).keypress(function(e){
 	if(e.wich == 43 || e.keyCode == 43){
-        var n1 = document.getElementById("n1").value;
-		var n2 = document.getElementById("n2").value;
-        var op = document.getElementById("op").value;
-        if(n2=="0"){
-             n1 = parseFloat(document.getElementById("n1").value);
-             op = document.getElementById("op").value;
-             n2 = parseFloat(document.getElementById("n2").value);
-                    if(op==""){
-                        document.getElementById("n1").value = "0";
-                        r = 0;
-                    }
-                    else if(op=="+"){
-                        r = n1 + n2;
-                    }
-                    else if(op=="-"){
-                        r = n1 - n2;
-                    }
-                    else if(op=="/"){
-                        r = n1 / n2;
-                    }
-                    else if(op=="*"){
-                        r = n1 * n2;
-                    }  
-                    else{}
-        }
-        else{
-            if(n1==""){
-            r = n2; 
-            }
-            else{
-                 n1 = parseFloat(document.getElementById("n1").value);
-		         n2 = parseFloat(document.getElementById("n2").value);
-                if(op=="+"){
-                     r = n1+n2;
-                }
-                else if(op=="-"){
-                     r = n1-n2;
-                }
-                else if(op=="/"){
-                     r = n1/n2;
-                }
-                 else if(op=="*"){
-                     r = n1*n2;
-                }
-                else{
-                }
-            } 
-        }
-        document.getElementById("n1").value = r;
-        document.getElementById("n2").value = "0";
-        document.getElementById("op").value = "+";
-        v="0";
-	z=0;
+        somar();
 	}
   })
 })
@@ -665,63 +613,7 @@ $(document).ready(function(){
 $(document).ready(function(){
   $(document).keypress(function(e){
 	if(e.wich == 45 || e.keyCode == 45){
-        var n1 = document.getElementById("n1").value;
-		var n2 = document.getElementById("n2").value;
-        var op = document.getElementById("op").value;
-        if(n1==""){
-            if(n2=="0"){
-                n2="-";
-            }
-            else{
-                n1 = n2;
-                op = "-";
-                n2 = "0";
-            }
-        }
-        else{
-            n1 = parseFloat(document.getElementById("n1").value);
-            n2 = parseFloat(document.getElementById("n2").value);
-            d="0";
-            if(op=="*"){
-                if(!n2=="0"){
-                    n1 = n1*n2;
-                    n2="-";
-                }
-                else{
-                    n2="-";
-                }
-            }
-            else if(op=="/"){
-                if(!n2=="0"){
-                    n1 = n1/n2;
-                    n2="-";
-                }
-                else{
-                    n2="-";
-                }
-            }
-            else if(op=="+"){
-                if(!n2=="0"){
-                    n1 = n1+n2;
-                    op = "-"
-                    n2 = "0";
-                   }
-                else{
-                    op = "-";
-                }
-            }
-            else if(op=="-"){
-                n1=n1-n2;
-                op="-";
-                n2="0";
-            }
-		else{}
-        }
-        document.getElementById("n1").value = n1;
-        document.getElementById("n2").value = n2;
-        document.getElementById("op").value = op;
-        v="0";
-	z=0;
+        sub();
 	}
   })
 })
@@ -788,59 +680,7 @@ $(document).ready(function(){
 $(document).ready(function(){
   $(document).keypress(function(e){
 	if(e.wich == 47 || e.keyCode == 47){
-        var n1 = document.getElementById("n1").value;
-		var n2 = document.getElementById("n2").value;
-        var op = document.getElementById("op").value;
-        if(n2=="0"){
-             n1 = parseFloat(document.getElementById("n1").value);
-             op = document.getElementById("op").value;
-             n2 = parseFloat(document.getElementById("n2").value);
-                    if(op==""){
-                        document.getElementById("n1").value = "0";
-                        r = 0;
-                    }
-                    else if(op=="+"){
-                        r = n1 + n2;
-                    }
-                    else if(op=="-"){
-                        r = n1 - n2;
-                    }
-                    else if(op=="/"){
-                        r = n1 / n2;
-                    }
-                    else if(op=="*"){
-                        r = n1 * n2;
-                    }  
-                    else{}
-        }
-        else{
-            if(n1==""){
-            r = n2; 
-            }
-            else{
-                 n1 = parseFloat(document.getElementById("n1").value);
-		         n2 = parseFloat(document.getElementById("n2").value);
-                if(op=="+"){
-                     r = n1+n2;
-                }
-                else if(op=="-"){
-                     r = n1-n2;
-                }
-                else if(op=="/"){
-                     r = n1/n2;
-                }
-                 else if(op=="*"){
-                     r = n1*n2;
-                }
-                else{
-                }
-            } 
-        }
-        document.getElementById("n1").value = r;
-        document.getElementById("n2").value = "0";
-        document.getElementById("op").value = "/";
-        v="0";
-	z=0;
+        div();
 	}
   })
 })
@@ -849,9 +689,7 @@ $(document).ready(function(){
 		var n2 = document.getElementById("n2").value;
         var op = document.getElementById("op").value;
         if(n2=="0"){
-             //n1 = parseFloat(document.getElementById("n1").value);
              op = document.getElementById("op").value;
-             //n2 = parseFloat(document.getElementById("n2").value);
                     if(op==""){
                         document.getElementById("n1").value = "0";
                         r = 0;
@@ -902,59 +740,7 @@ $(document).ready(function(){
 $(document).ready(function(){
   $(document).keypress(function(e){
 	if(e.wich == 42 || e.keyCode == 42){
-        var n1 = document.getElementById("n1").value;
-		var n2 = document.getElementById("n2").value;
-        var op = document.getElementById("op").value;
-        if(n2=="0"){
-             n1 = parseFloat(document.getElementById("n1").value);
-             op = document.getElementById("op").value;
-             n2 = parseFloat(document.getElementById("n2").value);
-                    if(op==""){
-                        document.getElementById("n1").value = "0";
-                        r = 0;
-                    }
-                    else if(op=="+"){
-                        r = n1 + n2;
-                    }
-                    else if(op=="-"){
-                        r = n1 - n2;
-                    }
-                    else if(op=="/"){
-                        r = n1 / n2;
-                    }
-                    else if(op=="*"){
-                        r = n1 * n2;
-                    }  
-                    else{}
-        }
-        else{
-            if(n1==""){
-            r = n2; 
-            }
-            else{
-                 n1 = parseFloat(document.getElementById("n1").value);
-		         n2 = parseFloat(document.getElementById("n2").value);
-                if(op=="+"){
-                     r = n1+n2;
-                }
-                else if(op=="-"){
-                     r = n1-n2;
-                }
-                else if(op=="/"){
-                     r = n1/n2;
-                }
-                 else if(op=="*"){
-                     r = n1*n2;
-                }
-                else{
-                }
-            } 
-        }
-        document.getElementById("n1").value = r;
-        document.getElementById("n2").value = "0";
-        document.getElementById("op").value = "*";
-        v="0";
-	z=0;
+        mult();
 	}
   })
 })
@@ -1020,28 +806,14 @@ $(document).ready(function(){
 $(document).ready(function(){
   $(document).keypress(function(e){
 	if(e.wich ==  114 || e.keyCode == 114){
-		n2 = parseFloat(document.getElementById("n2").value);
-        	document.getElementById("n2").value = Math.sqrt(n2); 
+		raiz();
 	}	
   })
 })
 $(document).ready(function(){
   $(document).keypress(function(e){
 	if(e.wich == 37 || e.keyCode == 37){
-        var n1 = document.getElementById("n1").value;
-        var n2 = parseFloat(document.getElementById("n2").value);
-        var op = document.getElementById("op").value;
-        if (z=="0"){
-             if(n1==""){
-             }
-             else{
-		 n1 = parseFloat(document.getElementById("n1").value);
-                 var x = (n1/100)*n2;
-                 document.getElementById("n2").value = x;
-                 z=1;
-             }
-        }
-        else{}
+        porcent();
 	}
   })
 })
@@ -1061,52 +833,15 @@ $(document).ready(function(){
         }
         else{}
     }
-     function mudar() {
+    function mudar() {
         var n2 = parseFloat(document.getElementById("n2").value);
-       	n2=n2*(-1);
-	document.getElementById("n2").value = n2;
+        n2=n2*(-1);
+        document.getElementById("n2").value = n2;
     }
 $(document).ready(function(){
   $(document).keypress(function(e){
 	if(e.wich == 13 || e.keyCode == 13 || e.wich == 61 || e.keyCode == 61){
-	var n1 = parseFloat(document.getElementById("n1").value);
-	var n2 = parseFloat(document.getElementById("n2").value);
-	var op = document.getElementById("op").value;
-	if(op == "+"){
-        	if(n1 == ""){
-            		n1="0";
-        	}
-        	else{}
-	n2=n1+n2;
-	}
-	else if(op == "-"){
-        	if(n1 == ""){
-            		n1="0";           
-        	}
-        	else{}
-	n2=n1-n2;
-	}
-	else if(op == "/"){
-        	if(n1 == ""){
-            	n1="0";           
-        	}
-        	else{}
-	n2=n1/n2;
-	}
-	else if(op == "*"){
-        	if(n1 == ""){
-            		n1="0";           
-        	}
-        else{}
-		n2=n1*n2;
-		}
-    document.getElementById("n1").value = "";
-    document.getElementById("op").value = "";
-	document.getElementById("n2").value = n2;
-	
-    v="0";
-    d="1";
-    z=0;
+	result();
 	}
   })
 })
@@ -1161,6 +896,8 @@ $(document).ready(function(){
 
 $('#excluir').on('click', function (){
   var input = $('#n2'); 
+  var end = input.endsWith;
+  console.log(end);
   input.val(input.val().slice(0, -1));
 });
 
